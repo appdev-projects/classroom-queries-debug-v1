@@ -1,0 +1,2 @@
+class BigLetter < ApplicationRecord
+end

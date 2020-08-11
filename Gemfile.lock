@@ -1,10 +1,11 @@
 GIT
   remote: https://github.com/firstdraft/draft_generators.git
-  revision: 2714b2507753af7a81310f012fb6af43f7fe519c
-  branch: winter-2020
+  revision: ee96cfe2a86591c28d9b8d9e1f4b11e282e84090
+  branch: pm_remove_instance_variables
   specs:
     draft_generators (0.0.3)
       devise
+      indefinite_article
 
 GIT
   remote: https://github.com/firstdraft/grade_runner.git
@@ -145,6 +146,8 @@ GEM
     hashdiff (1.0.1)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
+    indefinite_article (0.2.4)
+      activesupport
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.1)

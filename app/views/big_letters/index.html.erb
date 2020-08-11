@@ -1,0 +1,102 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      List of all big letters
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h2>
+      Add a new big letter
+    </h2>
+
+    <form action="/insert_big_letter" method="post">
+      <div class="form-group">
+        <label for="title_box">
+          Title
+        </label>
+
+        <input type="text" id="title_box" name="query_title" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="body_box">
+          Body
+        </label>
+
+        <textarea id="body_box" name="query_body" class="form-control" rows="3"></textarea>
+      </div>
+
+      <button class="btn btn-block btn-outline-secondary">
+        Create big letter
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Title
+        </th>
+
+        <th>
+          Body
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_big_letters.each do |a_big_letter| %>
+      <tr>
+        <td>
+          <%= a_big_letter.id %>
+        </td>
+
+        <td>
+          <%= a_big_letter.title %>
+        </td>
+
+        <td>
+          <%= a_big_letter.body %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_big_letter.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_big_letter.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/big_letters/<%= a_big_letter.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

@@ -1,0 +1,86 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Big letter #<%= @the_big_letter.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/big_letters" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_big_letter/<%= @the_big_letter.id %>" class="btn btn-block btn-outline-secondary">
+          Delete big letter
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Title
+      </dt>
+      <dd>
+        <%= @the_big_letter.title %>
+      </dd>
+
+      <dt>
+        Body
+      </dt>
+      <dd>
+        <%= @the_big_letter.body %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_big_letter.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_big_letter.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h2>
+      Edit big letter
+    </h2>
+
+    <form action="/modify_big_letter/<%= @the_big_letter.id %>"  method="post" >
+      <div class="form-group">
+        <label for="title_box">
+          Title
+        </label>
+
+        <input type="text" id="title_box" name="query_title" class="form-control" value="<%= @the_big_letter.title %>">
+      </div>
+
+      <div class="form-group">
+        <label for="body_box">
+          Body
+        </label>
+
+        <textarea id="body_box" name="query_body" class="form-control" rows="3"><%= @the_big_letter.body %></textarea>
+      </div>
+
+      <button class="btn btn-block btn-outline-secondary">
+        Update big letter
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

@@ -1,4 +1,42 @@
 Rails.application.routes.draw do
+  # Routes for the Big letter resource:
+
+  # CREATE
+  post("/insert_big_letter", { :controller => "big_letters", :action => "create" })
+          
+  # READ
+  get("/big_letters", { :controller => "big_letters", :action => "index" })
+  
+  get("/big_letters/:path_id", { :controller => "big_letters", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_big_letter/:path_id", { :controller => "big_letters", :action => "update" })
+  
+  # DELETE
+  get("/delete_big_letter/:path_id", { :controller => "big_letters", :action => "destroy" })
+
+  #------------------------------
+
+  # Routes for the Post resource:
+
+  # CREATE
+  post("/insert_post", { :controller => "posts", :action => "create" })
+          
+  # READ
+  get("/posts", { :controller => "posts", :action => "index" })
+  
+  get("/posts/:path_id", { :controller => "posts", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_post/:path_id", { :controller => "posts", :action => "update" })
+  
+  # DELETE
+  get("/delete_post/:path_id", { :controller => "posts", :action => "destroy" })
+
+  #------------------------------
+
   get("/", { :controller => "departments", :action => "index" })
   # Routes for the Department resource:
           
